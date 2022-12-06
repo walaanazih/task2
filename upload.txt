@@ -1,0 +1,15 @@
+$ext = pathinfo($_FILES['profile']['name'], PATHINFO_EXTENSION);
+$uniq=email post;
+	$filename=$uniq.".".$ext;
+ $destinationn= 'upload/'.$filename;
+	
+ if ( move_uploaded_file($file, $destinationn))
+ {
+	$profileErr = "The file ". htmlspecialchars( basename( $_FILES["profile"]["name"])). " has been uploaded.";
+return $profileErr ;
+ }
+ else
+ {
+	$profileErr = "Sorry, there was an error uploading your file";
+return $profileErr ;
+ }
